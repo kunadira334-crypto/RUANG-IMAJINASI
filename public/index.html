@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruang Belajar MI — Media Pembelajaran KBC & Deep Learning</title>
+  <meta name="description" content="Media pembelajaran Madrasah Ibtidaiyah Kelas 1-6 dengan insersi Kurikulum Berbasis Cinta (KBC) dan pendekatan Deep Learning." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-logo">📚</span>
+      <div>
+        <div class="brand-title">Ruang Belajar MI</div>
+        <div class="brand-sub">KBC × Deep Learning</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#beranda" class="nav-link active">Beranda</a>
+      <a href="#mapel" class="nav-link">Mata Pelajaran</a>
+      <a href="#pendekatan" class="nav-link">Pendekatan</a>
+      <a href="#modul" class="nav-link">Modul & LKPD</a>
+      <a href="#nilai" class="nav-link">Nilai Siswa</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="beranda">
+    <div class="hero-inner">
+      <div class="hero-badge">Madrasah Ibtidaiyah · Kelas 1–6</div>
+      <h1>Belajar dengan <span class="hl-green">Cinta</span> &amp; <span class="hl-blue">Kegembiraan</span></h1>
+      <p class="hero-desc">Media pembelajaran lengkap semua mata pelajaran Kemenag &amp; Diknas, disisipi nilai <strong>Kurikulum Berbasis Cinta (KBC)</strong> dan pendekatan <strong>Deep Learning</strong> — mindful, meaningful, joyful.</p>
+      <div class="hero-actions">
+        <a href="#mapel" class="btn btn-primary">Mulai Belajar</a>
+        <a href="#pendekatan" class="btn btn-ghost">Pelajari Pendekatan</a>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </section>
+
+  <!-- ===================== PENDEKATAN ===================== -->
+  <section class="section" id="pendekatan">
+    <div class="section-head">
+      <h2>Dua Pendekatan Dalam Satu Ruang</h2>
+      <p>Setiap topik menyisipkan nilai cinta (KBC) dan dirancang mendalam (Deep Learning).</p>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-card kbc">
+        <h3>💚 Kurikulum Berbasis Cinta</h3>
+        <p>Lima pilar cinta yang disisipkan ke seluruh mata pelajaran.</p>
+        <div class="pilar-list" id="kbcList"></div>
+      </div>
+      <div class="approach-card deep">
+        <h3>🧠 Deep Learning</h3>
+        <p>Pembelajaran mendalam melalui tiga prinsip.</p>
+        <div class="pilar-list" id="deepList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAPEL ===================== -->
+  <section class="section soft-bg" id="mapel">
+    <div class="section-head">
+      <h2>Mata Pelajaran</h2>
+      <p>Pilih rumpun, kelas, lalu buka materi, kuis, dan latihan.</p>
+    </div>
+    <div class="filters">
+      <div class="filter-group" id="rumpunFilter">
+        <button class="chip active" data-rumpun="all">Semua</button>
+        <button class="chip" data-rumpun="kemenag">Kemenag</button>
+        <button class="chip" data-rumpun="diknas">Diknas</button>
+      </div>
+      <div class="filter-group" id="kelasFilter">
+        <button class="chip chip-kelas active" data-kelas="all">Semua Kelas</button>
+        <button class="chip chip-kelas" data-kelas="1">1</button>
+        <button class="chip chip-kelas" data-kelas="2">2</button>
+        <button class="chip chip-kelas" data-kelas="3">3</button>
+        <button class="chip chip-kelas" data-kelas="4">4</button>
+        <button class="chip chip-kelas" data-kelas="5">5</button>
+        <button class="chip chip-kelas" data-kelas="6">6</button>
+      </div>
+    </div>
+    <div class="subject-grid" id="subjectGrid"></div>
+  </section>
+
+  <!-- ===================== MODUL & LKPD ===================== -->
+  <section class="section" id="modul">
+    <div class="section-head">
+      <h2>Generator Modul Ajar &amp; LKPD</h2>
+      <p>Buat modul ajar atau LKPD lengkap dengan KBC &amp; Deep Learning, lalu simpan atau cetak.</p>
+    </div>
+    <div class="modul-wrap">
+      <form class="modul-form" id="modulForm">
+        <div class="tabs-mini">
+          <button type="button" class="tab-mini active" data-doc="modul">Modul Ajar</button>
+          <button type="button" class="tab-mini" data-doc="lkpd">LKPD</button>
+        </div>
+        <label>Nama Guru<input type="text" id="mGuru" placeholder="Nama guru" /></label>
+        <label>Mata Pelajaran<input type="text" id="mMapel" placeholder="mis. Matematika" /></label>
+        <label>Kelas / Semester<input type="text" id="mKelas" placeholder="mis. IV / 1" /></label>
+        <label>Materi / Topik<input type="text" id="mTopik" placeholder="mis. Pecahan" /></label>
+        <label>Alokasi Waktu<input type="text" id="mWaktu" placeholder="mis. 2 x 35 menit" /></label>
+        <label>Tujuan Pembelajaran<textarea id="mTujuan" rows="2" placeholder="Tuliskan tujuan..."></textarea></label>
+        <label>Pilar KBC
+          <select id="mKbc">
+            <option value="Cinta kepada Allah & Rasul-Nya">Cinta kepada Allah & Rasul-Nya</option>
+            <option value="Cinta kepada Ilmu">Cinta kepada Ilmu</option>
+            <option value="Cinta Diri & Sesama">Cinta Diri & Sesama</option>
+            <option value="Cinta Lingkungan">Cinta Lingkungan</option>
+            <option value="Cinta Tanah Air">Cinta Tanah Air</option>
+          </select>
+        </label>
+        <div class="form-actions">
+          <button type="button" class="btn btn-primary" id="genDoc">Buat Dokumen</button>
+          <button type="button" class="btn btn-ghost" id="printDoc">🖨️ Cetak / Simpan PDF</button>
+        </div>
+      </form>
+      <div class="modul-preview" id="modulPreview">
+        <p class="muted">Isi formulir lalu klik “Buat Dokumen” untuk melihat pratinjau di sini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NILAI ===================== -->
+  <section class="section soft-bg" id="nilai">
+    <div class="section-head">
+      <h2>Nilai &amp; Riwayat Kuis</h2>
+      <p>Hasil kuis tersimpan otomatis. <span id="modeBadge" class="mode-badge"></span></p>
+    </div>
+    <div class="nilai-controls">
+      <input type="text" id="studentName" placeholder="Nama siswa (untuk menyimpan nilai)" />
+      <input type="number" id="studentKelas" min="1" max="6" placeholder="Kelas" />
+      <button class="btn btn-ghost" id="refreshResults">Muat Riwayat</button>
+    </div>
+    <div class="results-table-wrap">
+      <table class="results-table">
+        <thead><tr><th>Waktu</th><th>Siswa</th><th>Mapel</th><th>Topik</th><th>Nilai</th></tr></thead>
+        <tbody id="resultsBody"><tr><td colspan="5" class="muted">Belum ada data. Kerjakan kuis atau klik “Muat Riwayat”.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>📚 <strong>Ruang Belajar MI</strong> — Media pembelajaran KBC &amp; Deep Learning untuk Madrasah Ibtidaiyah.</p>
+    <p class="muted small">Konten disusun sebagai bahan ajar pendamping, bukan salinan buku teks berhak cipta. Bebas dikembangkan guru.</p>
+  </footer>
+
+  <!-- ===================== MODAL MAPEL ===================== -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-header" id="modalHeader"></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- data.js = fallback statis (dipakai bila backend tidak ada) -->
+  <script src="data.js"></script>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "ruang-belajar-mi",
+  "version": "1.0.0",
+  "description": "Media pembelajaran full-stack Madrasah Ibtidaiyah (Kelas 1-6) dengan insersi Kurikulum Berbasis Cinta (KBC) dan pendekatan Deep Learning (Mindful, Meaningful, Joyful).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "keywords": ["madrasah", "ibtidaiyah", "kbc", "deep-learning", "pembelajaran", "kemenag"],
+  "license": "MIT",
+  "dependencies": {}
+}
