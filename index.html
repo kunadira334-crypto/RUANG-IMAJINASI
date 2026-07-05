@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ruang Belajar MI — Media Pembelajaran Madrasah Ibtidaiyah</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">📚</div>
+      <div><b>Ruang Belajar MI</b><span>Media Pembelajaran Madrasah Ibtidaiyah</span></div>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#beranda">Beranda</a>
+      <a href="#mapel">Mata Pelajaran</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#modul">Modul &amp; LKPD</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✨ Untuk Guru &amp; Siswa MI Kelas 1–6</span>
+      <h1>Belajar jadi <span class="accent">seru &amp; bermakna</span> di Madrasah Ibtidaiyah</h1>
+      <p>Satu tempat untuk semua mata pelajaran Kemenag &amp; Diknas — lengkap dengan materi, kuis interaktif, ilustrasi, latihan soal, simulasi, serta modul ajar &amp; LKPD yang bisa langsung disimpan atau dicetak.</p>
+      <div class="cta-row">
+        <a href="#mapel" class="btn btn-primary">Mulai Belajar →</a>
+        <a href="#modul" class="btn btn-ghost">🖨️ Buat Modul &amp; LKPD</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="statMapel">11</b><span>Mata Pelajaran</span></div>
+        <div class="stat"><b>6</b><span>Jenjang Kelas</span></div>
+        <div class="stat"><b>5in1</b><span>Fitur Belajar</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h4>Yang bisa kamu lakukan di sini</h4>
+      <div class="mini-grid">
+        <div class="mini"><span class="ic">📖</span><b>Materi</b><small>Penjelasan ringkas &amp; jelas</small></div>
+        <div class="mini"><span class="ic">🧩</span><b>Kuis</b><small>Interaktif &amp; langsung dinilai</small></div>
+        <div class="mini"><span class="ic">🎬</span><b>Ilustrasi</b><small>Visual &amp; video pendukung</small></div>
+        <div class="mini"><span class="ic">✏️</span><b>Latihan</b><small>Soal untuk berlatih</small></div>
+        <div class="mini"><span class="ic">🔬</span><b>Simulasi</b><small>Coba langsung &amp; interaktif</small></div>
+        <div class="mini"><span class="ic">🖨️</span><b>Modul/LKPD</b><small>Simpan &amp; cetak sekali klik</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATA PELAJARAN -->
+<section id="mapel">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Mata Pelajaran</span>
+      <h2>Pilih pelajaran, langsung belajar</h2>
+      <p>Klik salah satu kartu untuk membuka materi, kuis, ilustrasi, latihan soal, dan simulasi.</p>
+    </div>
+    <div class="filters" id="filters">
+      <button class="chip active" data-f="all">Semua</button>
+      <button class="chip" data-f="kemenag">Kemenag (PAI &amp; Bahasa Arab)</button>
+      <button class="chip" data-f="diknas">Diknas (Umum)</button>
+    </div>
+    <div class="subj-grid" id="subjGrid"></div>
+  </div>
+</section>
+
+<!-- FITUR -->
+<section class="band" id="fitur">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Fitur</span>
+      <h2>Lima cara belajar dalam satu web</h2>
+      <p>Dirancang agar cocok untuk pembelajaran di kelas maupun belajar mandiri di rumah.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ic" style="background:var(--blue-soft);color:var(--blue)">📖</div><h3>Materi &amp; Penjelasan</h3><p>Ringkasan materi tiap pelajaran dengan bahasa sederhana yang mudah dipahami siswa MI.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--purple-soft);color:var(--purple)">🧩</div><h3>Kuis Interaktif</h3><p>Soal pilihan ganda dengan umpan balik langsung dan skor otomatis di akhir kuis.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--orange-soft);color:var(--orange)">🎬</div><h3>Video &amp; Ilustrasi</h3><p>Dukungan visual dan tautan video agar konsep abstrak jadi lebih konkret.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--green-soft);color:var(--green)">✏️</div><h3>Latihan Soal</h3><p>Kumpulan soal berlatih beserta kunci jawaban yang bisa dibuka bertahap.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--red-soft);color:var(--red)">🔬</div><h3>Simulasi Interaktif</h3><p>Alat peraga digital yang bisa digerakkan siswa untuk memahami konsep.</p></div>
+      <div class="feat"><div class="ic" style="background:var(--surface-2);color:var(--text)">🖨️</div><h3>Modul Ajar &amp; LKPD</h3><p>Buat modul ajar &amp; LKPD dari template, lalu simpan sebagai PDF atau cetak langsung.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODUL & LKPD -->
+<section id="modul">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Modul Ajar &amp; LKPD</span>
+      <h2>Buat perangkat ajar, langsung cetak</h2>
+      <p>Isi formulir singkat, lalu klik cetak/simpan. Dokumen akan terbuka rapi siap dijadikan PDF atau dicetak (Ctrl/Cmd + P).</p>
+    </div>
+    <div class="modul-grid">
+      <!-- Modul Ajar -->
+      <div class="modul-card">
+        <h3>📄 Modul Ajar</h3>
+        <p>Rencana pembelajaran ringkas sesuai Kurikulum Merdeka.</p>
+        <div class="field"><label>Nama Madrasah</label><input id="ma_sekolah" value="MI ..." /></div>
+        <div class="field-2">
+          <div class="field"><label>Mata Pelajaran</label><input id="ma_mapel" value="Matematika" /></div>
+          <div class="field"><label>Kelas / Semester</label><input id="ma_kelas" value="IV / Ganjil" /></div>
+        </div>
+        <div class="field-2">
+          <div class="field"><label>Alokasi Waktu</label><input id="ma_waktu" value="2 x 35 menit" /></div>
+          <div class="field"><label>Nama Guru</label><input id="ma_guru" value="" placeholder="Nama pengajar" /></div>
+        </div>
+        <div class="field"><label>Materi / Topik</label><input id="ma_materi" value="Penjumlahan Bilangan" /></div>
+        <div class="field"><label>Tujuan Pembelajaran</label><textarea id="ma_tujuan">Siswa mampu menjumlahkan bilangan sampai 1.000 dengan benar.</textarea></div>
+        <div class="field"><label>Kegiatan Pembelajaran (pisahkan dengan enter)</label><textarea id="ma_kegiatan">Pendahuluan: doa, apersepsi, tujuan.
+Inti: penjelasan materi, contoh soal, diskusi kelompok.
+Penutup: kesimpulan, refleksi, tugas.</textarea></div>
+        <button class="btn btn-primary" style="width:100%" onclick="cetakModul()">🖨️ Simpan / Cetak Modul Ajar</button>
+      </div>
+
+      <!-- LKPD -->
+      <div class="modul-card">
+        <h3>📝 LKPD (Lembar Kerja Peserta Didik)</h3>
+        <p>Lembar kerja siswa dengan kolom identitas &amp; soal isian.</p>
+        <div class="field"><label>Judul LKPD</label><input id="lk_judul" value="LKPD Penjumlahan Bilangan" /></div>
+        <div class="field-2">
+          <div class="field"><label>Mata Pelajaran</label><input id="lk_mapel" value="Matematika" /></div>
+          <div class="field"><label>Kelas</label><input id="lk_kelas" value="IV" /></div>
+        </div>
+        <div class="field"><label>Petunjuk Pengerjaan</label><textarea id="lk_petunjuk">Kerjakan soal berikut dengan teliti. Tulis jawaban pada tempat yang disediakan.</textarea></div>
+        <div class="field"><label>Soal (satu soal per baris)</label><textarea id="lk_soal" style="min-height:120px">125 + 340 = ....
+256 + 118 = ....
+Ani memiliki 150 kelereng, lalu diberi 75 lagi. Berapa jumlah kelereng Ani sekarang?
+412 + 205 = ....
+Sebutkan langkah menjumlahkan 234 + 158!</textarea></div>
+        <div class="field"><label>Jumlah kolom jawaban kosong tambahan</label><input id="lk_kosong" type="number" value="2" min="0" max="10" /></div>
+        <button class="btn btn-primary" style="width:100%" onclick="cetakLKPD()">🖨️ Simpan / Cetak LKPD</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <div class="logo">📚</div>
+        <div><b>Ruang Belajar MI</b><span>Media Pembelajaran Madrasah Ibtidaiyah</span></div>
+      </div>
+      <p>Media pembelajaran interaktif untuk mendukung guru dan siswa Madrasah Ibtidaiyah pada mata pelajaran Kemenag &amp; Diknas.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h5>Belajar</h5>
+        <a href="#mapel">Mata Pelajaran</a>
+        <a href="#fitur">Fitur</a>
+        <a href="#modul">Modul &amp; LKPD</a>
+      </div>
+      <div>
+        <h5>Rumpun</h5>
+        <a href="#mapel">PAI &amp; Bahasa Arab</a>
+        <a href="#mapel">Umum (Diknas)</a>
+        <a href="#mapel">Kelas 1–6</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap copyright">© <span id="year"></span> Ruang Belajar MI · Dibuat untuk pembelajaran Madrasah Ibtidaiyah.</div>
+</footer>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<!-- PRINT AREA -->
+<div id="printArea" class="print-doc"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
