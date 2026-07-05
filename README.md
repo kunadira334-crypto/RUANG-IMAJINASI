@@ -1,86 +1,74 @@
-# 📚 Ruang Belajar MI — Full-Stack
+# RuangMuridMI 🕌
 
-Media pembelajaran **Madrasah Ibtidaiyah (Kelas 1–6)** untuk **semua mata pelajaran** Kemenag & Diknas, dengan **insersi Kurikulum Berbasis Cinta (KBC)** dan pendekatan **Deep Learning** (Mindful, Meaningful, Joyful) pada setiap topik.
+Prototipe web app pembelajaran untuk anak **Madrasah Ibtidaiyah (MI)**, terinspirasi dari *Ruang Murid – Rumah Pendidikan*, dikhususkan untuk madrasah dengan:
 
-Aplikasi ini **full-stack sungguhan** (server + database), tapi juga **bisa dipakai sebagai web statis** (mis. GitHub Pages) berkat fallback otomatis ke `localStorage`. Jadi “bisa semua”.
+- **Kurikulum Merdeka** sebagai kerangka
+- **Pembelajaran Mendalam (Deep Learning)** sebagai pendekatan belajar
+- **Kurikulum Berbasis Cinta (KBC)** sebagai nilai/karakter
 
----
+Desain: modern, bersih, dan **ramah anak** (mobile-first untuk murid; dashboard untuk guru & wali).
 
-## ✨ Fitur
+## 📂 Struktur
 
-- **11 mata pelajaran**: Al-Qur'an Hadits, Akidah Akhlak, Fikih, SKI, Bahasa Arab (Kemenag) + Matematika, Bahasa Indonesia, IPAS, Pendidikan Pancasila, Bahasa Inggris, PJOK, Seni Budaya (Diknas).
-- **Filter rumpun (Kemenag/Diknas) & kelas (1–6)**.
-- Setiap topik berisi: **Materi**, **Insersi KBC** (5 pilar cinta), **Aktivitas Deep Learning**, **Kuis interaktif** (nilai otomatis), dan **Latihan** + kunci jawaban.
-- **Generator Modul Ajar & LKPD** — bisa dicetak / disimpan PDF.
-- **Penyimpanan nilai siswa** ke database (mode server) atau browser (mode statis).
+```
+ruang-murid-mi/
+├─ index.html            → Halaman masuk (pilih peran)
+├─ murid/
+│  ├─ index.html         → Beranda murid
+│  ├─ mapel.html         → Daftar mapel per kelas
+│  ├─ materi.html        → Halaman materi (video + DL + KBC)
+│  ├─ kuis.html          → Latihan soal interaktif
+│  ├─ pojok-cinta.html   → Pembiasaan akhlak (KBC)
+│  └─ profil.html        → Profil, lencana, progres
+├─ guru/index.html       → Dashboard guru
+├─ wali/index.html       → Dashboard orang tua/wali
+├─ assets/               → styles.css, app.js, logo.svg
+└─ vercel.json
+```
 
----
+Situs **statis** (HTML/CSS/JS murni) — tanpa proses build, ringan, cocok untuk internet terbatas.
 
-## 🚀 Cara Menjalankan (Full-Stack)
+## ▶️ Menjalankan secara lokal
 
-> Butuh **Node.js versi 22.5 atau lebih baru** (memakai database bawaan `node:sqlite`, **tanpa perlu `npm install`**).
+Cukup buka `index.html` di browser. Atau jalankan server statis:
 
 ```bash
-node server.js
+python3 -m http.server 3000
+# buka http://localhost:3000
 ```
 
-Lalu buka **http://localhost:3000**
+## 🚀 Upload ke GitHub
 
-Database `data.db` (SQLite) dibuat otomatis untuk menyimpan nilai kuis.
-
-### REST API
-
-| Method | Endpoint | Fungsi |
-|--------|----------|--------|
-| GET | `/api/meta` | Info + pilar KBC & Deep Learning |
-| GET | `/api/subjects?rumpun=&kelas=` | Daftar mata pelajaran |
-| GET | `/api/subjects/:id?kelas=` | Detail mapel + topik |
-| POST | `/api/results` | Simpan nilai kuis |
-| GET | `/api/results?student=` | Riwayat nilai |
-| GET | `/api/stats` | Rekap nilai per siswa |
-
----
-
-## 🌐 Cara Pakai Tanpa Server (Statis / GitHub Pages)
-
-Aplikasi otomatis mendeteksi bila backend tidak ada, lalu memakai `public/data.js` + `localStorage`.
-
-1. Upload isi folder **`public/`** ke repositori GitHub.
-2. Aktifkan **Settings → Pages** → pilih branch → folder `/root` (atau `/public`).
-3. Buka URL GitHub Pages-mu. Nilai kuis tersimpan di browser.
-
-> Atau cukup buka `public/index.html` langsung di browser.
-
----
-
-## 📁 Struktur
-
-```
-ruang-belajar-mi/
-├─ server.js              # Server + REST API + SQLite (node:sqlite)
-├─ content/kurikulum.js   # Dataset semua mapel + KBC + Deep Learning
-├─ public/
-│  ├─ index.html
-│  ├─ styles.css
-│  ├─ app.js              # Logika UI
-│  ├─ api.js              # Klien API + fallback localStorage
-│  └─ data.js             # Salinan dataset untuk mode statis
-├─ package.json
-├─ README.md
-├─ LICENSE                # MIT
-└─ .gitignore
+```bash
+git init
+git add .
+git commit -m "RuangMuridMI: prototipe awal"
+git branch -M main
+git remote add origin https://github.com/USERNAME/ruang-murid-mi.git
+git push -u origin main
 ```
 
+## ▲ Deploy ke Vercel
+
+1. Buka [vercel.com](https://vercel.com) → **Add New… → Project**.
+2. Pilih repo `ruang-murid-mi` dari GitHub.
+3. **Framework Preset:** pilih **Other** (situs statis, tanpa build).
+4. Klik **Deploy**. Selesai — setiap `git push` akan auto-deploy.
+
+> Alternatif cepat: seret-lepas folder ini ke halaman **vercel.com/new** tanpa GitHub.
+
+## 🎨 Catatan Desain
+
+- Warna khas madrasah (hijau & emas), sudut membulat, bayangan lembut.
+- Area **murid** mobile-first dengan navigasi bawah; area **guru/wali** desktop dengan sidebar.
+- Emoji sebagai ikon agar ringan; ganti dengan ikon/ilustrasi kustom saat produksi.
+
+## ✅ Langkah Lanjut (Produksi)
+
+- Sambungkan ke database & login (mis. **Supabase**).
+- Ubah ke **Next.js** bila butuh fitur dinamis (lihat blueprint di Notion).
+- Validasi materi & nilai KBC bersama guru madrasah.
+- Samakan topik dengan **Capaian Pembelajaran** Kurikulum Merdeka & **KMA Kemenag**.
+
 ---
-
-## 📖 Tentang Pendekatan
-
-**Kurikulum Berbasis Cinta (KBC)** — Kemenag — menyisipkan 5 pilar cinta ke seluruh mapel: (1) Cinta kepada Allah & Rasul-Nya, (2) Cinta kepada Ilmu, (3) Cinta Diri & Sesama, (4) Cinta Lingkungan, (5) Cinta Tanah Air.
-
-**Deep Learning / Pembelajaran Mendalam** — Kemendikdasmen — tiga prinsip: **Mindful** (berkesadaran), **Meaningful** (bermakna), **Joyful** (menggembirakan).
-
-> Catatan: Konten adalah bahan ajar pendamping yang disusun mandiri, **bukan salinan buku teks berhak cipta**. Guru bebas menambah/menyunting topik di `content/kurikulum.js` (dan `public/data.js`).
-
----
-
-© 2026 — Ruang Belajar MI. Lisensi MIT.
+_Prototipe untuk keperluan perancangan. Materi contoh masih dummy._
