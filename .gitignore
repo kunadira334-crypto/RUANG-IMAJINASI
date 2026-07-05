@@ -1,3 +1,6 @@
 node_modules/
-.DS_Store
+data.db
+data.db-journal
 *.log
+.DS_Store
+.env
